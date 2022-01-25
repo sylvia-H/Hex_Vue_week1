@@ -47,10 +47,6 @@ var app = {
       itemDetail: {}
     };
   },
-  // 生命週期
-  created: function created() {
-    this.itemID = '';
-  },
   methods: {
     changeStatus: function changeStatus(id) {
       this.products.forEach(function (item) {
