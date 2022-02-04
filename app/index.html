@@ -34,7 +34,7 @@ current: index
               </tr>
             </thead>
             <tbody>
-              <tr v-for="item in products">
+              <tr v-for="item in products" :key="item.id">
                 <td>
                   {{ item.title }}
                 </td>
