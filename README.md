@@ -1,5 +1,7 @@
 # Vue 作品實戰 2022 春季班 Week1 主線任務
 
+## [Demo](https://sylvia-h.github.io/Hex_Vue_week1/)
+
 ## 專案重點
 
 * 點擊可切換**產品狀態**（啟用/未啟用）
