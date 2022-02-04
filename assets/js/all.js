@@ -43,8 +43,8 @@ var app = {
         imageUrl: "https://images.unsplash.com/photo-1505253149613-112d21d9f6a9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDZ8fGNha2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
         imagesUrl: ["https://images.unsplash.com/flagged/photo-1557234985-425e10c9d7f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA5fHxjYWtlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60", "https://images.unsplash.com/photo-1540337706094-da10342c93d8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDR8fGNha2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60"]
       }],
-      itemID: '',
-      itemDetail: {}
+      tempID: '',
+      tempItemInfo: {}
     };
   },
   methods: {
@@ -58,10 +58,10 @@ var app = {
     showDetail: function showDetail(id) {
       var _this = this;
 
-      this.itemID = id;
+      this.tempID = id;
       this.products.forEach(function (item) {
         if (item.id === id) {
-          _this.itemDetail = item;
+          _this.tempItemInfo = item;
         }
       });
     }

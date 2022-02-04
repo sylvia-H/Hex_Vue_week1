@@ -60,17 +60,17 @@
                   {{ item.num }}
                 </td>
                 <td>
-                  <span v-if="item.is_enabled" data-id="item.id"
-                   class="btn btn-success py-2 px-2 rounded" v-on:click="changeStatus(item.id)">
+                  <span v-if="item.is_enabled" @click="changeStatus(item.id)"
+                   class="btn btn-success py-2 px-2 rounded">
                       啟用
                   </span>
-                  <span v-else data-id="item.id" 
-                   class="btn btn-dark py-2 px-2 rounded" v-on:click="changeStatus(item.id)">
+                  <span v-else @click="changeStatus(item.id)" 
+                   class="btn btn-dark py-2 px-2 rounded">
                       未啟用
                   </span>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-primary" v-on:click="showDetail(item.id)">
+                    <button type="button" class="btn btn-primary" @click="showDetail(item.id)">
                         查看細節
                     </button>
                 </td>
@@ -80,39 +80,39 @@
           <p>目前有 <span>{{ products.length }}</span> 項產品</p>
         </div>
 
-        
+
         <div class="col-6">
-            <div v-if="itemID" class="card mb-3">
-              <!-- 圖片 -->
-              <div class="productGallery row">
-                <div class="col-7">
-                  <img v-bind:src="itemDetail.imageUrl" class="card-img-top card-image" alt="itemDetail.title">
-                </div>
-                <div class="col-5 d-flex flex-column justify-content-between">
-                  <template v-for="imgSrc in itemDetail.imagesUrl">
-                    <div>
-                      <img v-bind:src="imgSrc" class="img-cover" alt="itemDetail.title" class="images m-2">
-                    </div>
-                  </template>
+          <div v-if="tempID" class="card">
+            <!-- 圖片 -->
+            <div class="row">
+              <div class="col-7 p-4">
+                <div class="rounded-4 overflow-hidden ratio ratio-3x4">
+                  <img :src="tempItemInfo.imageUrl" class="img-cover" alt="tempItemInfo.title">
                 </div>
               </div>
-              <div class="card-body">
-                <h5 class="card-title">
-                  {{ itemDetail.title }}
-                  <span class="badge bg-primary ms-2">{{ itemDetail.category }}</span>
-                </h5>
-                <p class="card-text">商品描述：{{ itemDetail.description }}</p>
-                <p class="card-text">商品內容：{{ itemDetail.content }}</p>
-                <div class="d-flex">
-                  <p class="card-text me-2">{{  }}</p>
-                  <p class="card-text text-secondary"><del>{{  }}</del></p>
-                  {{ itemDetail.price }} <span class="text-secondary mx-2"><s>{{ itemDetail.origin_price }}</s></span> 元
-                </div>
+              <div class="col-5 p-4 d-flex flex-column justify-content-around">
+                <template v-for="imgSrc in tempItemInfo.imagesUrl">
+                  <div class="rounded-4 overflow-hidden ratio ratio-4x3">
+                    <img :src="imgSrc" class="img-cover" alt="itemDetail.title" class="img-cover">
+                  </div>
+                </template>
               </div>
             </div>
-        </div>
-
-
+            <div class="card-body">
+              <h5 class="card-title">
+                {{ tempItemInfo.title }}
+                <span class="badge bg-primary ms-2">{{ tempItemInfo.category }}</span>
+              </h5>
+              <p class="card-text">商品描述：{{ tempItemInfo.description }}</p>
+              <p class="card-text">商品內容：{{ tempItemInfo.content }}</p>
+              <div class="d-flex">
+                <p class="card-text me-2">{{  }}</p>
+                <p class="card-text text-secondary"><del>{{  }}</del></p>
+                {{ tempItemInfo.price }} <span class="text-secondary mx-2"><s>{{ tempItemInfo.origin_price }}</s></span> 元
+              </div>
+            </div>
+          </div>
+      </div>
 
 
       </div>

@@ -7209,6 +7209,10 @@ fieldset:disabled .btn {
   --bs-aspect-ratio: calc(3 / 4 * 100%);
 }
 
+.ratio-3x4 {
+  --bs-aspect-ratio: calc(4 / 3 * 100%);
+}
+
 .ratio-16x9 {
   --bs-aspect-ratio: calc(9 / 16 * 100%);
 }
@@ -23932,14 +23936,5 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p {
 
 /* Components */
 /* Layout */
-.card-image {
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
-.productGallery {
-  max-height: 450px;
-  overflow: hidden;
-}
 
 /*# sourceMappingURL=all.css.map */
