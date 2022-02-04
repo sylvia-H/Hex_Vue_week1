@@ -53,8 +53,8 @@ const app = {
                   ]
                 }
               ],
-            itemID:'',
-            itemDetail:{}
+            tempID:'',
+            tempItemInfo:{}
         }
     },
     methods:{
@@ -66,10 +66,10 @@ const app = {
             });
         },
         showDetail(id){
-          this.itemID = id;
+          this.tempID = id;
           this.products.forEach(item => {
               if(item.id === id){
-                this.itemDetail = item;
+                this.tempItemInfo = item;
               }
           });
         }
